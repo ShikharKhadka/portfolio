@@ -157,6 +157,11 @@ a.secondary {
     justify-content: center;
   }
 }
+.menu {
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+}
 
 .semicircle {
   width: 100px; /* Adjust size */
@@ -206,6 +211,7 @@ a.secondary {
     width: 35%;
     height: 20vh;
     position: absolute;
+    background-color: #758398;
   }
   .curve {
     top: 30px;
@@ -222,6 +228,7 @@ a.secondary {
     width: 50%;
     height: 50vh;
     position: absolute;
+    background-color: #758398;
   }
   .curve {
     position: relative;
@@ -238,15 +245,14 @@ a.secondary {
     width: 45%;
     height: 80vh;
     position: absolute;
-
     /* position: absolute; */
   }
   .curve {
     position: relative;
-    top: 50px;
-    height: 500px;
-    width: 550px;
-    background-color: black;
+    top: 100px;
+    height: 400px;
+    width: 450px;
+    background-color: rgba(0, 0, 0, 0.9);
     border-radius: 50%;
     right: 200px;
   }
