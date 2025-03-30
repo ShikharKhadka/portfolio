@@ -3,7 +3,8 @@
 // import Image from "next/image";
 import React, { useRef, useEffect } from "react";
 import styles from "./page.module.css";
-import { Experience } from "./component/experience";
+import { Experience } from "./component/experience/experience";
+import { Projectshowcase } from "./component/project_showcase/project_showcase";
 
 const CanvasExample = () => {
   const menuList = ["Lorem", "Ipsum", "Lorem ", "Ipsum"];
@@ -127,6 +128,7 @@ const CanvasExample = () => {
         </div>
       </div>
       <Experience />
+      <Projectshowcase />
     </div>
   );
 };

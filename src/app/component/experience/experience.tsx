@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../component/experience.module.css";
+import styles from "../experience/experience.module.css";
 import Image from "next/image";
 
 export const Experience = () => {
