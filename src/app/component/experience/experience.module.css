@@ -1,26 +1,27 @@
 .body {
   margin: 100px 100px 0 100px;
-  font-weight: 400;
-  font-size: 18px;
-  font-style: normal;
   /* height: 100vh; */
 }
 
 .container {
   width: 100%;
   display: flex;
-  justify-content: center;
 }
 .containercard {
   display: flex;
   flex-direction: column;
   width: 35%;
 }
+.horizantaldivider {
+  height: 3px;
+  width: 100%;
+  background-color: rgba(75, 0, 16, 0.5);
+}
 .leftcard {
-  padding-right: 70px;
+  padding-right: 20px;
 }
 .rightcard {
-  padding-left: 70px;
+  padding-left: 0px;
 }
 .card {
   height: 200px;

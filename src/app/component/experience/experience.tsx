@@ -3,7 +3,7 @@ import styles from "../experience/experience.module.css";
 import Image from "next/image";
 
 export const Experience = () => {
-  const list = ["Text", "Text", "Text", "Text"];
+  const list = ["Text", "Text", "Text"];
   const imageLoader = ({
     src,
     width,
@@ -21,11 +21,15 @@ export const Experience = () => {
   return (
     <div className={styles.body}>
       <div
+        className="h1"
         style={{
           marginBottom: "60px",
+          display: "flex",
+          alignItems: "center",
         }}
       >
-        Lorem Ipsum
+        <div style={{ width: "150px" }}> Lorem Ipsum</div>
+        <div className={styles.horizantaldivider} />
       </div>
       <div className={styles.container}>
         <div className={`${styles.containercard} ${styles.leftcard}`}>

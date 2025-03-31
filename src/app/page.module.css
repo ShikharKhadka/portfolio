@@ -161,6 +161,7 @@ a.secondary {
   font-weight: 400;
   font-size: 18px;
   font-style: normal;
+  color: rgba(75, 0, 16, 0.5);
 }
 
 .semicircle {

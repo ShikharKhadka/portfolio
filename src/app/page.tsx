@@ -5,9 +5,11 @@ import React, { useRef, useEffect } from "react";
 import styles from "./page.module.css";
 import { Experience } from "./component/experience/experience";
 import { Projectshowcase } from "./component/project_showcase/project_showcase";
+import { Academic } from "./component/academic/academic";
+import { Tools } from "./component/tools/tools";
 
 const CanvasExample = () => {
-  const menuList = ["Lorem", "Ipsum", "Lorem ", "Ipsum"];
+  const menuList = ["Lorem", "Ipsum", "Vestibulum ", "Maecenas"];
   // const menuList = ["Home", "Education", "Experience", "Skills"];
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -124,10 +126,20 @@ const CanvasExample = () => {
               the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor
               sit amet.., comes from a line in section 1.10.32
             </div>
+            <button
+              className="button"
+              style={{
+                margin: "10px 0 10px 0px",
+              }}
+            >
+              Lorem Ipsum
+            </button>
           </div>
         </div>
       </div>
+      <Academic />
       <Experience />
+      <Tools />
       <Projectshowcase />
     </div>
   );

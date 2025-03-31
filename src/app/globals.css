@@ -16,7 +16,7 @@ body {
   overflow-x: hidden;
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-mont_serrat);
+  font-family: var(--font-mont_serrat), var(--font-cormorant_garamond);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -31,9 +31,39 @@ body {
 
 .h1 {
   font-family: var(--font-mont_serrat);
-  font-weight: 400;
+  font-weight: bold;
   font-size: 18px;
   font-style: normal;
+  color: #4b0010;
+}
+.button {
+  height: 40px;
+  width: 120px;
+  padding: 4px;
+  border-radius: 6px;
+  background-color: #4b0010;
+}
+
+.h2 {
+  font-family: var(--font-cormorant_garamond);
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: 2;
+  font-style: normal;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bodymargin {
+  margin: 100px 100px 0 100px;
+  /* height: 100vh; */
+}
+.contextmargin {
+  margin-bottom: 60px;
 }
 
 * {
