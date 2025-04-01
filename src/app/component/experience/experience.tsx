@@ -2,22 +2,47 @@ import React from "react";
 import styles from "../experience/experience.module.css";
 import Image from "next/image";
 
-export const Experience = () => {
-  const list = ["Text", "Text", "Text"];
-  const imageLoader = ({
-    src,
-    width,
-    quality,
-  }: {
-    src: string;
-    width: number;
-    quality?: number;
-  }) => {
-    return `https://${src}?w=${width}&q=${quality || 75}`;
-  };
+interface EducationI {
+  level: string;
+  college: string;
+  duration: string;
+  location: string;
+}
 
-  const text =
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an ";
+export const Experience = () => {
+  const educationList: EducationI[] = [
+    {
+      level: "Bachelor in Information Technology ",
+      college: "Herald College, university of Cambridge",
+      duration: "2017-2021",
+      location: "Hattisar,Kathmandu",
+    },
+    {
+      level: "Bachelor in Information Technology ",
+      college: "Herald College, university of Cambridge",
+      duration: "2017-2021",
+      location: "Hattisar,Kathmandu",
+    },
+    {
+      level: "Bachelor in Information Technology ",
+      college: "Herald College, university of Cambridge",
+      duration: "2017-2021",
+      location: "Hattisar,Kathmandu",
+    },
+  ];
+  const iconList: string[] = ["/education.png", "/two-books.png", "/book.png"];
+  // const imageLoader = ({
+  //   src,
+  //   width,
+  //   quality,
+  // }: {
+  //   src: string;
+  //   width: number;
+  //   quality?: number;
+  // }) => {
+  //   return `https://${src}?w=${width}&q=${quality || 75}`;
+  // };
+
   return (
     <div className={styles.body}>
       <div
@@ -33,16 +58,17 @@ export const Experience = () => {
       </div>
       <div className={styles.container}>
         <div className={`${styles.containercard} ${styles.leftcard}`}>
-          {list.map((e, index) => (
+          {educationList.map((e, index) => (
             <div key={index}>
               {index % 2 == 0 ? (
                 <div
                   key={index}
                   className={`${styles.card} ${styles.firstcard} ${styles.boxshadowcard} `}
                 >
-                  <div style={{ display: "flex", justifyContent: "start" }}>
-                    {text}
-                  </div>
+                  <div className={styles.cardHeading}>{e.level}</div>
+                  <div className={styles.cardcollegeName}>{e.college}</div>
+                  <div className={styles.cardcollegeLocation}>{e.duration}</div>
+                  <div className={styles.cardcollegeLocation}>{e.location}</div>
                 </div>
               ) : (
                 <div
@@ -55,17 +81,18 @@ export const Experience = () => {
         </div>
 
         <div className={`${styles.divider}`}>
-          {list.map((e, index) => (
+          {iconList.map((e, index) => (
             <div key={index}>
               {
                 <div key={index} className={styles.dividercontainer}>
                   <div className={styles.circle}>
                     <Image
-                      loader={imageLoader}
-                      src="encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf7_g32AJh8IkT9JVSPaYiHEMFyaLHXzxYXA&s"
+                      className="img"
+                      src={e}
                       alt="Picture of the author"
                       width={50}
                       height={50}
+                      color="red"
                     />
                   </div>
                 </div>
@@ -73,16 +100,18 @@ export const Experience = () => {
             </div>
           ))}
         </div>
-
         <div className={`${styles.containercard} ${styles.rightcard}`}>
-          {list.map((e, index) => (
+          {educationList.map((e, index) => (
             <div key={index}>
               {!(index % 2 == 0) ? (
                 <div
                   key={index}
                   className={`${styles.card} ${styles.secondcard} ${styles.boxshadowcard}`}
                 >
-                  {text}
+                  <div className={styles.cardHeading}>{e.level}</div>
+                  <div className={styles.cardcollegeName}>{e.college}</div>
+                  <div className={styles.cardcollegeLocation}>{e.duration}</div>
+                  <div className={styles.cardcollegeLocation}>{e.location}</div>
                 </div>
               ) : (
                 <div

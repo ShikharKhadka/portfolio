@@ -10,60 +10,73 @@ interface ToolsI {
 export const Tools = () => {
   const capsuleList: ToolsI[] = [
     {
-      image: "/next.svg",
-      name: "Lorem Ipsum",
+      image: "/icons/flutter.svg",
+      name: "Flutter",
       percentage: "95%",
     },
     {
-      image: "/next.svg",
-      name: "Lorem Ipsum",
+      image: "/icons/react.png",
+      name: "React",
       percentage: "95%",
     },
     {
-      image: "/next.svg",
-      name: "Lorem Ipsum",
+      image: "/icons/html-5.svg",
+      name: "Html/Css",
       percentage: "95%",
     },
     {
-      image: "/next.svg",
-      name: "Lorem Ipsum",
+      image: "/icons/nextjs.svg",
+      name: "Next.js",
       percentage: "95%",
     },
     {
-      image: "/next.svg",
-      name: "Lorem Ipsum",
+      image: "/icons/api.svg",
+      name: "Rest Api",
       percentage: "95%",
     },
     {
-      image: "/next.svg",
-      name: "Lorem Ipsum",
+      image: "/icons/java-script.png",
+      name: "JavaScript",
       percentage: "95%",
     },
   ];
   return (
     <div className={styles.body}>
-      <div className={`${"h2"} ${"center"}`}>Exploring the tools</div>
-      <div className={`${"h1"} ${"center"}`}>Behind My Work</div>
+      <div className={styles.dividercontainer}>
+        <div className={styles.divider}></div>
+        <div className={`${"h2"} ${"center"}`}>Exploring the tools</div>
+        <div className={`${"h1"} ${"center"}`}>Behind My Work</div>{" "}
+        <div className={styles.divider}></div>
+      </div>
+
       <div
         style={{
           display: "flex",
           justifyContent: "center",
           paddingTop: "70px",
+          flexFlow: "wrap",
         }}
       >
         {capsuleList.map((e, index) => (
-          <div key={index}>
+          <div key={index} style={{}}>
             <div className={styles.capsule}>
               <Image
                 className={styles.img}
                 src={e.image}
                 alt="image"
-                width={70}
-                height={70}
+                height={30}
+                width={100}
               />
               <div className={styles.percent}>{e.percentage}</div>
             </div>
-            <div style={{ textAlign: "center" }}>{e.name}</div>
+            <div
+              className="h2"
+              style={{
+                textAlign: "center",
+              }}
+            >
+              {e.name}
+            </div>
           </div>
         ))}
       </div>

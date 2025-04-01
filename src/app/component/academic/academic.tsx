@@ -77,7 +77,7 @@ export const Academic = () => {
             style={{
               display: "flex",
               alignItems: "center",
-              paddingRight: "100px",
+              backgroundColor: "red",
             }}
           >
             <div className={styles.academicyear}>{e.startDate}</div>

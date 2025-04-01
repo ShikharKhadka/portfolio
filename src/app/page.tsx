@@ -4,7 +4,6 @@
 import React, { useRef, useEffect } from "react";
 import styles from "./page.module.css";
 import { Experience } from "./component/experience/experience";
-import { Projectshowcase } from "./component/project_showcase/project_showcase";
 import { Academic } from "./component/academic/academic";
 import { Tools } from "./component/tools/tools";
 
@@ -140,7 +139,7 @@ const CanvasExample = () => {
       <Academic />
       <Experience />
       <Tools />
-      <Projectshowcase />
+      {/* <Projectshowcase /> */}
     </div>
   );
 };
