@@ -29,7 +29,6 @@ const CanvasExample = () => {
         context.closePath(); // Close the shape
 
         // context.quadraticCurveTo(0, 700, 900, 800);
-        // context.lineWidth = 3;
         const gradient = context.createLinearGradient(900, 900, 0, 0);
 
         gradient.addColorStop(0, "grey"); // Top color
@@ -65,32 +64,32 @@ const CanvasExample = () => {
 
   return (
     <div
-      style={{
-        width: "100%",
-      }}
+      style={
+        {
+          // width: "100%",
+          // height: "100vh",
+        }
+      }
     >
       <div
         style={{
           display: "flex",
-          justifyContent: "end", // Aligns everything to the right
-          alignItems: "center", // Optional: Aligns vertically in the
         }}
       >
-        <canvas ref={canvasRef} className={styles.semicirclecurve} />
-        <div className={styles.curve}></div>
         <div
           style={{
-            position: "absolute",
-            left: "100px",
-            width: "50%",
-            height: "350px",
-            top: 0,
+            // position: "absolute",
+            // width: "100%",
+            // right: "100px",
+            // top: 0,
+            marginRight: "30px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
+            // backgroundColor: "red",
           }}
         >
-          <div
+          {/* <div
             style={{
               display: "flex",
               top: "10px",
@@ -103,8 +102,12 @@ const CanvasExample = () => {
                 {e}
               </div>
             ))}
-          </div>
-          <div>
+          </div> */}
+          <div
+            style={{
+              position: "relative",
+            }}
+          >
             <div className="h1">Lorem Ipsum</div>
             <div
               className="text"
@@ -135,10 +138,17 @@ const CanvasExample = () => {
             </button>
           </div>
         </div>
+        <div>
+          <canvas ref={canvasRef} className={styles.semicirclecurve} />
+          <div
+            className={styles.curve}
+            style={{ position: "absolute", top: 40, right: 100 }}
+          ></div>
+        </div>
       </div>
-      <Academic />
-      <Experience />
-      <Tools />
+      {/* <Academic /> */}
+      {/* <Experience />
+      <Tools /> */}
       {/* <Projectshowcase /> */}
     </div>
   );

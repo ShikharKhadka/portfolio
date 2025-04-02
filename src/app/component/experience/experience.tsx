@@ -57,7 +57,7 @@ export const Experience = () => {
         <div className={styles.horizantaldivider} />
       </div>
       <div className={styles.container}>
-        <div className={`${styles.containercard} ${styles.leftcard}`}>
+        <div className={`${styles.containercard}`}>
           {educationList.map((e, index) => (
             <div key={index}>
               {index % 2 == 0 ? (

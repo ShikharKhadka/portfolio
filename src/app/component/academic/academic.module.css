@@ -1,20 +1,57 @@
-.body {
-  margin: 120px 100px 0 100px;
-  font-weight: 400;
-  font-size: 18px;
-  font-style: normal;
-  border: 1px solid rgba(75, 0, 16, 0.5);
-  border-radius: 8px;
-  padding: 20px;
-  /* height: 100vh; */
+@media (max-width: 480px) {
+  .body {
+    margin: 100px 0px 0px 30px;
+  }
+  .hcontent1 {
+    flex-grow: 1;
+  }
+  .academic {
+    padding: 20px 0px 20px 0px;
+    gap: 10px;
+  }
+  .academicendyear {
+    padding-right: 10px;
+  }
 }
+@media (min-width: 480px) and (max-width: 1023px) {
+  .body {
+    margin: 120px 100px 0 100px;
+    font-weight: 400;
+    font-size: 18px;
+    font-style: normal;
+    border: 1px solid rgba(75, 0, 16, 0.5);
+    border-radius: 8px;
+    padding: 20px;
+
+    /* height: 100vh; */
+  }
+  .academicdescription {
+    width: 60%;
+  }
+}
+@media (min-width: 1024px) {
+  .body {
+    margin: 120px 100px 0 100px;
+    font-weight: 400;
+    font-size: 18px;
+    font-style: normal;
+    border: 1px solid rgba(75, 0, 16, 0.5);
+    border-radius: 8px;
+    padding: 20px;
+    /* height: 100vh; */
+  }
+  .academicdescription {
+    width: 50%;
+  }
+}
+
 .heading {
   display: flex;
 }
 
 .hcontent1 {
-  flex-basis: 0;
-  flex-grow: 2;
+  flex-basis: 2;
+  flex-grow: 1;
 }
 
 .hcontent2 {
@@ -24,23 +61,16 @@
   font-size: 14px;
   font-style: normal;
   color: rgb(97, 96, 96, 0.8);
+  margin-right: 10px;
 }
 .academic {
   display: flex;
   /* margin: 10px; */
-  padding: 20px 20px 20px 0px;
+  padding: 20px 2px 20px 0px;
   justify-content: space-between;
 }
 
-.academicdescription {
-  width: 50%;
-}
-.academicdescription {
-  width: 50%;
-}
-
 .academicyear {
-  flex-basis: auto;
   font-weight: 500;
   font-size: 26px;
   color: #4b0010;
@@ -60,9 +90,8 @@
 }
 
 .academicendyear {
-  flex-basis: auto;
   font-weight: 500;
-  padding-right: 40px;
+  /* padding-right: 40px; */
   font-size: 26px;
   display: flex;
   color: #4b0010;

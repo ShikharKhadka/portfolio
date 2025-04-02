@@ -207,54 +207,61 @@ a.secondary {
   grid-row: 1 / 3; /* Starts at row 1 and spans 2 rows */
 }
 
-@media (max-width: 700px) {
+@media (max-width: 480px) {
   .semicirclecurve {
-    width: 35%;
-    height: 20vh;
-    position: absolute;
-    background-color: #758398;
+    /* background-color: red; */
+    /* width: 35%; */
+    height: 15vh;
+    /* position: absolute; */
+    /* background-color: #758398; */
   }
   .curve {
-    top: 30px;
-    height: 200px;
-    width: 200px;
-    background-color: white;
+    /* position: relative; */
+    /* top: 30px; */
+    height: 100px;
+    width: 100px;
+    background-color: blue;
     border-radius: 50%;
-    left: -50px;
+    /* left: -50px; */
   }
 }
 
-@media (min-width: 701px) and (max-width: 1023px) {
+@media (min-width: 481px) and (max-width: 1023px) {
   .semicirclecurve {
-    width: 50%;
+    /* width: 50%; */
     height: 50vh;
-    position: absolute;
-    background-color: #758398;
+    /* width: 500px; */
+
+    /* position: absolute; */
+    /* background-color: #758398; */
   }
   .curve {
-    position: relative;
-    top: 50px;
+    /* position: relative; */
+    /* top: 50px;
     height: 400px;
     width: 450px;
     background-color: white;
+    border-radius: 50%; */
+    height: 400px;
+    width: 450px;
+    background-color: rgba(0, 0, 0, 0.9);
     border-radius: 50%;
   }
 }
 
 @media (min-width: 1024px) {
   .semicirclecurve {
-    width: 45%;
-    height: 80vh;
-    position: absolute;
+    /* width: 25%; */
+    height: 60vh;
+    width: 500px;
+    /* position: absolute; */
     /* position: absolute; */
   }
   .curve {
-    position: relative;
-    top: 100px;
     height: 400px;
     width: 450px;
     background-color: rgba(0, 0, 0, 0.9);
     border-radius: 50%;
-    right: 200px;
+    /* right: 200px; */
   }
 }

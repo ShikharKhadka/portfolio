@@ -69,7 +69,7 @@ export const Academic = () => {
       </div>
       {academicData.map((e, index) => (
         <div key={index} className={styles.academic}>
-          <div className={styles.academictitle}>
+          <div>
             <div className={styles.academictext}>{e.title}</div>
             <div className={styles.academicdescription}>{e.description}</div>
           </div>
@@ -77,7 +77,6 @@ export const Academic = () => {
             style={{
               display: "flex",
               alignItems: "center",
-              backgroundColor: "red",
             }}
           >
             <div className={styles.academicyear}>{e.startDate}</div>
