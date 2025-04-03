@@ -63,92 +63,65 @@ const CanvasExample = () => {
   // };
 
   return (
-    <div
-      style={
-        {
-          // width: "100%",
-          // height: "100vh",
-        }
-      }
-    >
-      <div
-        style={{
-          display: "flex",
-        }}
-      >
-        <div
-          style={{
-            // position: "absolute",
-            // width: "100%",
-            // right: "100px",
-            // top: 0,
-            marginRight: "30px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            // backgroundColor: "red",
-          }}
-        >
-          {/* <div
-            style={{
-              display: "flex",
-              top: "10px",
-              position: "relative",
-              gap: "100px",
-            }}
-          >
-            {menuList.map((e, index) => (
-              <div className={styles.menu} key={index}>
-                {e}
-              </div>
-            ))}
-          </div> */}
+    <div>
+      <div className={styles.heading}>
+        <div className={styles.headingc}>
           <div
             style={{
-              position: "relative",
+              gap: "50px",
             }}
           >
-            <div className="h1">Lorem Ipsum</div>
-            <div
-              className="text"
-              style={{
-                margin: "14px 0 0 0",
-              }}
-            >
-              Contrary to popular belief, Lorem Ipsum is not simply random text.
-              It has roots in a piece of classical Latin literature from 45 BC,
-              making it over 2000 years old. Richard McClintock, a Latin
-              professor at Hampden-Sydney College in Virginia, looked up one of
-              the more obscure Latin words, consectetur, from a Lorem Ipsum
-              passage, and going through the cites of the word in classical
-              literature, discovered the undoubtable source. Lorem Ipsum comes
-              from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum
-              (The Extremes of Good and Evil) by Cicero, written in 45 BC. This
-              book is a treatise on the theory of ethics, very popular during
-              the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor
-              sit amet.., comes from a line in section 1.10.32
+            <div className={styles.menucontainer}>
+              {menuList.map((e, index) => (
+                <div className={styles.menu} key={index}>
+                  {e}
+                </div>
+              ))}
             </div>
-            <button
-              className="button"
-              style={{
-                margin: "10px 0 10px 0px",
-              }}
-            >
-              Lorem Ipsum
-            </button>
+            <div>
+              <div className="h1">Lorem Ipsum</div>
+              <div
+                className="text"
+                style={{
+                  margin: "14px 0 0 0",
+                }}
+              >
+                Contrary to popular belief, Lorem Ipsum is not simply random
+                text. It has roots in a piece of classical Latin literature from
+                45 BC, making it over 2000 years old. Richard McClintock, a
+                Latin professor at Hampden-Sydney College in Virginia, looked up
+                one of the more obscure Latin words, consectetur, from a Lorem
+                Ipsum passage, and going through the cites of the word in
+                classical literature, discovered the undoubtable source. Lorem
+                Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus
+                Bonorum et Malorum (The Extremes of Good and Evil) by Cicero,
+                written in 45 BC. This book is a treatise on the theory of
+                ethics, very popular during the Renaissance. The first line of
+                Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in
+                section 1.10.32
+              </div>
+              <button
+                className="button"
+                style={{
+                  margin: "10px 0 10px 0px",
+                }}
+              >
+                Lorem Ipsum
+              </button>
+            </div>
           </div>
         </div>
         <div>
           <canvas ref={canvasRef} className={styles.semicirclecurve} />
           <div
             className={styles.curve}
-            style={{ position: "absolute", top: 40, right: 100 }}
+            // style={{ position: "absolute", top: 40, right: 100 }}
           ></div>
         </div>
       </div>
-      {/* <Academic /> */}
-      {/* <Experience />
-      <Tools /> */}
+      <Academic />
+      <Experience />
+      <Tools />
       {/* <Projectshowcase /> */}
     </div>
   );

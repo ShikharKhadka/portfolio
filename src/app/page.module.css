@@ -163,6 +163,12 @@ a.secondary {
   font-style: normal;
   color: rgba(75, 0, 16, 0.5);
 }
+.menucontainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 80px;
+}
 
 .semicircle {
   width: 100px; /* Adjust size */
@@ -216,52 +222,105 @@ a.secondary {
     /* background-color: #758398; */
   }
   .curve {
-    /* position: relative; */
-    /* top: 30px; */
+    position: absolute;
+    top: 6px;
     height: 100px;
     width: 100px;
-    background-color: blue;
+    background-color: black;
     border-radius: 50%;
-    /* left: -50px; */
+  }
+  .heading {
+    margin: 0px;
+    display: flex;
+  }
+  .headingc {
+    display: flex;
+    flex-direction: "column";
+    margin: 0 0px 0 20px;
+  }
+  .menucontainer {
+    display: none;
   }
 }
 
-@media (min-width: 481px) and (max-width: 1023px) {
+@media (min-width: 481px) and (max-width: 560px) {
   .semicirclecurve {
-    /* width: 50%; */
-    height: 50vh;
-    /* width: 500px; */
-
-    /* position: absolute; */
-    /* background-color: #758398; */
+    height: 30vh;
+    width: 30vw;
   }
   .curve {
-    /* position: relative; */
-    /* top: 50px;
-    height: 400px;
-    width: 450px;
-    background-color: white;
-    border-radius: 50%; */
-    height: 400px;
-    width: 450px;
+    height: 16vh;
+    width: 20vw;
     background-color: rgba(0, 0, 0, 0.9);
     border-radius: 50%;
+    position: absolute;
+    top: 20;
+    right: 10;
+  }
+  .heading {
+    display: flex;
+    margin: 0 0 0 20px;
+  }
+  .headingc {
+    display: flex;
+    flex-direction: "column";
+  }
+  .menucontainer {
+    display: none;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 1023px) {
+  .semicirclecurve {
+    height: 40vh;
+    width: 40vw;
+  }
+  .curve {
+    height: 30vh;
+    width: 30vw;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 50%;
+    position: absolute;
+    top: 40;
+    right: 20;
+  }
+  .heading {
+    display: flex;
+    margin: 0 0 0 100px;
+  }
+  .headingc {
+    display: flex;
+    flex-direction: "column";
+    margin-right: 20px;
+  }
+  .menucontainer {
+    display: none;
+    background-color: red;
   }
 }
 
 @media (min-width: 1024px) {
   .semicirclecurve {
-    /* width: 25%; */
     height: 60vh;
     width: 500px;
-    /* position: absolute; */
-    /* position: absolute; */
   }
   .curve {
     height: 400px;
     width: 450px;
     background-color: rgba(0, 0, 0, 0.9);
     border-radius: 50%;
+    position: absolute;
+    top: 40;
+    right: 100;
     /* right: 200px; */
+  }
+  .heading {
+    display: flex;
+    margin: 0 0 0 100px;
+  }
+  .headingc {
+    display: flex;
+    flex-direction: "column";
+    margin-right: 50px;
   }
 }
