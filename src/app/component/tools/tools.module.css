@@ -1,40 +1,90 @@
+@keyframes cardContainer {
+  from {
+    top: -40px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
 @media (max-width: 480px) {
   .body {
     margin: 100px 0px 0 0px;
-
-    /* height: 100vh; */
+  }
+  .capsule {
+    height: 100px;
+    width: 70px;
+    border-radius: 30px 30px 30px 30px;
+    margin: 30px;
+    background-color: rgba(75, 0, 16, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .img {
+    height: 50;
+    width: 50;
+    overflow: hidden;
   }
 }
 @media (min-width: 481px) and (max-width: 1023px) {
   .body {
     margin: 100px 0px 0 0px;
-    /* height: 100vh; */
+  }
+  .capsule {
+    height: 160px;
+    width: 150px;
+    border-radius: 50px 50px 50px 50px;
+    margin: 30px;
+    background-color: rgba(75, 0, 16, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .img {
+    height: 50;
+    width: 90;
+    overflow: hidden;
   }
 }
+
 @media (min-width: 1024px) {
   .body {
     margin: 100px 100px 0 100px;
     /* height
     : 100vh; */
   }
+  .heading {
+    animation: cardContainer 1s ease-out forwards;
+    position: relative;
+  }
+  .capsule {
+    height: 160px;
+    width: 150px;
+    border-radius: 50px 50px 50px 50px;
+    margin: 30px;
+    background-color: rgba(75, 0, 16, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+  }
+  .box {
+    position: relative;
+    animation: cardContainer 1s ease-out forwards;
+  }
+  .img {
+    height: 50;
+    width: 90;
+    overflow: hidden;
+  }
 }
 
-.capsule {
-  height: 160px;
-  width: 150px;
-  border-radius: 50px 50px 50px 50px;
-  margin: 30px;
-  background-color: rgba(75, 0, 16, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-.img {
-  height: 50;
-  width: 90;
-  overflow: hidden;
-}
 .percent {
   text-align: center;
   font-weight: 600;
@@ -47,7 +97,9 @@
   text-align: center;
   gap: 10px;
 }
-
+.dividercontainer.animate {
+  animation: cardContainer 1s ease-out forwards;
+}
 .divider {
   flex-grow: 1;
   height: 2px;

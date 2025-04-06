@@ -1,3 +1,11 @@
+@keyframes content {
+  from {
+    left: -100px;
+  }
+  to {
+    left: 0px;
+  }
+}
 @media (max-width: 480px) {
   .body {
     margin: 20px 0px 0px 30px;
@@ -38,6 +46,8 @@
     border: 1px solid rgba(75, 0, 16, 0.5);
     border-radius: 8px;
     padding: 20px;
+    animation: content 2s normal;
+    position: relative;
     /* height: 100vh; */
   }
   .academicdescription {

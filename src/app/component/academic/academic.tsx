@@ -8,7 +8,11 @@ interface AcademicData {
   endDate: string;
 }
 
-export const Academic = () => {
+export const Academic = ({
+  innerref,
+}: {
+  innerref: React.RefObject<HTMLDivElement | null>;
+}) => {
   const academicData: AcademicData[] = [
     {
       title: "What is Lorem Ipsum?",
@@ -54,7 +58,7 @@ export const Academic = () => {
     },
   ];
   return (
-    <div className={styles.body}>
+    <div ref={innerref} className={styles.body}>
       <div className="h1" style={{ paddingBottom: "12px" }}>
         Lorem Ipsum
       </div>

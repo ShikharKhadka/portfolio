@@ -162,12 +162,38 @@ a.secondary {
   font-size: 18px;
   font-style: normal;
   color: rgba(75, 0, 16, 0.5);
+  animation: mymenu 1s;
+  position: relative;
+}
+.menu.border {
+  border-radius: 20px;
+  border: 1px solid rgba(75, 0, 16);
+  padding: 5px 10px 5px 10px;
+  color: rgba(75, 0, 16);
 }
 .menucontainer {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
   margin-bottom: 80px;
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    top: 0px;
+  }
+  to {
+    opacity: 1;
+    bottom: 10px;
+  }
+}
+.icon {
+  cursor: pointer;
+}
+.icon.active {
+  position: relative;
+  animation: slideIn 3s ease;
+  animation-fill-mode: forwards;
 }
 
 .semicircle {
@@ -225,7 +251,7 @@ a.secondary {
     position: absolute;
     top: 6px;
     height: 100px;
-    width: 100px;
+    width: 20vw;
     background-color: black;
     border-radius: 50%;
   }
@@ -240,6 +266,36 @@ a.secondary {
   }
   .menucontainer {
     display: none;
+  }
+}
+.box {
+  margin: 14px 0 0 0;
+  animation: mymove 2s;
+}
+@keyframes mymove {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes imageContainer {
+  50% {
+    opacity: 2;
+  }
+  from {
+    top: -100px;
+  }
+  to {
+    top: 40px;
+  }
+}
+
+@keyframes mymenu {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0px;
   }
 }
 
@@ -302,7 +358,7 @@ a.secondary {
 @media (min-width: 1024px) {
   .semicirclecurve {
     height: 60vh;
-    width: 500px;
+    width: 35vw;
   }
   .curve {
     height: 400px;
@@ -312,6 +368,7 @@ a.secondary {
     position: absolute;
     top: 40;
     right: 100;
+    animation: imageContainer normal 2s;
     /* right: 200px; */
   }
   .heading {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "../tools/tools.module.css";
 import Image from "next/image";
 interface ToolsI {
@@ -40,26 +40,50 @@ export const Tools = () => {
       percentage: "95%",
     },
   ];
+
+  const cardRef = useRef<HTMLDivElement | null>(null);
+  const [animation, setAnimation] = useState(false);
+
+  useEffect(() => {
+    const handelScroll = () => {
+      if (animation || !cardRef.current) return;
+      const cardposition = cardRef.current.getBoundingClientRect().top;
+      const topCard = window.innerHeight;
+      if (cardposition < topCard - 100) {
+        setAnimation(true);
+      }
+    };
+    window.addEventListener("scroll", handelScroll);
+    handelScroll();
+    return () => {
+      window.removeEventListener("scroll", handelScroll);
+    };
+  }, [animation]);
   return (
-    <div className={styles.body}>
-      <div className={styles.dividercontainer}>
-        <div className={styles.divider}></div>
+    <div ref={cardRef} className={styles.body}>
+      <div
+        className={`${styles.dividercontainer} ${
+          animation ? styles.heading : ""
+        }`}
+      >
+        <div className={`${styles.divider}`}></div>
         <div className={`${"h2"} ${"center"}`}>Exploring the tools</div>
-        <div className={`${"h1"} ${"center"}`}>Behind My Work</div>{" "}
+        <div className={`${"h1"} ${"center"}}`}>Behind My Work</div>
         <div className={styles.divider}></div>
       </div>
 
       <div
+        className={`${animation ? styles.box : ""}`}
         style={{
           display: "flex",
           justifyContent: "center",
-          paddingTop: "70px",
+          paddingBottom: "70px",
           flexFlow: "wrap",
         }}
       >
         {capsuleList.map((e, index) => (
-          <div key={index} style={{}}>
-            <div className={styles.capsule}>
+          <div key={index}>
+            <div className={`${styles.capsule}`}>
               <Image
                 className={styles.img}
                 src={e.image}

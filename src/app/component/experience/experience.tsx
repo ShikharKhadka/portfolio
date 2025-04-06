@@ -9,7 +9,13 @@ interface EducationI {
   location: string;
 }
 
-export const Experience = () => {
+export const Experience = ({
+  innerref,
+  animation,
+}: {
+  innerref: React.RefObject<HTMLDivElement | null>;
+  animation: boolean;
+}) => {
   const educationList: EducationI[] = [
     {
       level: "Bachelor in Information Technology ",
@@ -31,6 +37,7 @@ export const Experience = () => {
     },
   ];
   const iconList: string[] = ["/education.png", "/two-books.png", "/book.png"];
+
   // const imageLoader = ({
   //   src,
   //   width,
@@ -44,16 +51,11 @@ export const Experience = () => {
   // };
 
   return (
-    <div className={styles.body}>
+    <div ref={innerref} className={styles.body}>
       <div
-        className="h1"
-        style={{
-          marginBottom: "60px",
-          display: "flex",
-          alignItems: "center",
-        }}
+        className={`h1 ${styles.heading} ${animation ? styles.animate : ""}`}
       >
-        <div style={{ width: "150px" }}> Lorem Ipsum</div>
+        <div> Lorem Ipsum</div>
         <div className={styles.horizantaldivider} />
       </div>
       <div className={styles.container}>
@@ -63,7 +65,9 @@ export const Experience = () => {
               {index % 2 == 0 ? (
                 <div
                   key={index}
-                  className={`${styles.card} ${styles.firstcard} ${styles.boxshadowcard} `}
+                  className={`${styles.card} ${styles.firstcard} ${
+                    styles.boxshadowcard
+                  } ${animation ? styles.animate : ""} `}
                 >
                   <div className={styles.cardHeading}>{e.level}</div>
                   <div className={styles.cardcollegeName}>{e.college}</div>
@@ -106,7 +110,9 @@ export const Experience = () => {
               {!(index % 2 == 0) ? (
                 <div
                   key={index}
-                  className={`${styles.card} ${styles.secondcard} ${styles.boxshadowcard}`}
+                  className={`${styles.card} ${styles.secondcard} ${
+                    styles.boxshadowcard
+                  } ${animation ? styles.animate : ""}`}
                 >
                   <div className={styles.cardHeading}>{e.level}</div>
                   <div className={styles.cardcollegeName}>{e.college}</div>
