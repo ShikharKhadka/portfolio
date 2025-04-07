@@ -7,6 +7,7 @@ import { Experience } from "./component/experience/experience";
 import { Academic } from "./component/academic/academic";
 import { Tools } from "./component/tools/tools";
 import Image from "next/image";
+import { Projectshowcase } from "./component/project_showcase/project_showcase";
 
 const CanvasExample = () => {
   const menuList = ["Home", "Experience", "Education ", "Tools"];
@@ -21,38 +22,106 @@ const CanvasExample = () => {
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
+  const academicRef = useRef<HTMLDivElement>(null);
+  const toolsRef = useRef<HTMLDivElement>(null);
+
   const [i, seti] = useState(0);
-  const [animation, setAnimation] = useState(false);
+  const [animation, setAnimation] = useState({
+    experience: false,
+    tools: false,
+  });
   const [position, setposition] = useState({
-    index: 0,
-    position: 0,
+    index: i,
+    type: {
+      academic: 0,
+      experience: 0,
+      tools: 0,
+    },
   });
 
   const onClick = (index: number) => {
     seti(index);
-    if (i == index) {
-      window.scrollTo({ behavior: "smooth", top: position.position });
+    if (index == 0) {
+      window.scrollTo({ behavior: "smooth", top: 0 });
+      return;
     }
+    if (index == 1) {
+      window.scrollTo({ behavior: "smooth", top: position.type.academic });
+      return;
+    }
+
+    if (index == 2) {
+      window.scrollTo({ behavior: "smooth", top: position.type.experience });
+      return;
+    }
+    window.scrollTo({ behavior: "smooth", top: position.type.tools });
   };
+
   useEffect(() => {
     const handelScroll = () => {
-      if (!bodyRef.current) return;
-      console.log("working");
-
-      const cardPosition = bodyRef.current.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      if (cardPosition < windowHeight - 100) {
-        setAnimation(true);
-      }
-      setposition({ ...position, position: cardPosition });
-      console.log(cardPosition);
+      if (!academicRef.current) return;
+      const cardPosition =
+        academicRef.current.getBoundingClientRect().top + window.scrollY;
+      setposition((prev) => ({
+        ...prev,
+        type: { ...prev.type, academic: cardPosition },
+      }));
     };
     window.addEventListener("scroll", handelScroll);
     handelScroll();
     return () => {
       window.removeEventListener("scroll", handelScroll);
     };
-  }, [animation]);
+  }, [i]);
+
+  useEffect(() => {
+    const handelScroll = () => {
+      if (!bodyRef.current) return;
+      const cardPosition =
+        bodyRef.current.getBoundingClientRect().top + window.scrollY;
+      const windowHeight = window.innerHeight;
+      if (cardPosition < windowHeight - 100) {
+        setAnimation((prev) => ({ ...prev, experience: true }));
+      }
+      setposition((prev) => ({
+        ...prev,
+        type: { ...prev.type, experience: cardPosition },
+      }));
+      // console.log(cardPosition, "this is card expereince");
+    };
+    window.addEventListener("scroll", handelScroll);
+    handelScroll();
+    return () => {
+      window.removeEventListener("scroll", handelScroll);
+    };
+  }, [i]);
+
+  useEffect(() => {
+    const handelScroll = () => {
+      if (!toolsRef.current) return;
+      const cardPosition =
+        toolsRef.current.getBoundingClientRect().top + window.scrollY;
+      const windowHeight = window.innerHeight;
+      if (cardPosition < windowHeight - 100) {
+        setAnimation((prev) => ({ ...prev, tools: true }));
+      }
+      setposition((prev) => ({
+        ...prev,
+        type: { ...prev.type, tools: cardPosition },
+      }));
+    };
+
+    window.addEventListener("scroll", handelScroll);
+    handelScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handelScroll);
+    };
+  }, [i]);
+
+  useEffect(() => {
+    // console.log(position, "This is position");
+  }, [position]);
   useEffect(() => {
     const canvas = canvasRef.current;
     if (canvas != null) {
@@ -205,10 +274,10 @@ const CanvasExample = () => {
             <div className={styles.curve}></div>
           </div>
         </div>
-        <Academic innerref={bodyRef} />
-        <Experience innerref={bodyRef} animation={animation} />
-        <Tools />
-        {/* <Projectshowcase /> */}
+        <Academic innerref={academicRef} />
+        <Experience innerref={bodyRef} animation={animation.experience} />
+        <Tools innerRef={toolsRef} animation={animation.tools} />
+        <Projectshowcase />
       </div>
     </div>
   );

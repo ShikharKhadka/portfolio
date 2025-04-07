@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import styles from "../tools/tools.module.css";
 import Image from "next/image";
 interface ToolsI {
@@ -7,7 +7,13 @@ interface ToolsI {
   name: string;
 }
 
-export const Tools = () => {
+export const Tools = ({
+  innerRef,
+  animation,
+}: {
+  innerRef: React.RefObject<HTMLDivElement | null>;
+  animation: boolean;
+}) => {
   const capsuleList: ToolsI[] = [
     {
       image: "/icons/flutter.svg",
@@ -41,26 +47,8 @@ export const Tools = () => {
     },
   ];
 
-  const cardRef = useRef<HTMLDivElement | null>(null);
-  const [animation, setAnimation] = useState(false);
-
-  useEffect(() => {
-    const handelScroll = () => {
-      if (animation || !cardRef.current) return;
-      const cardposition = cardRef.current.getBoundingClientRect().top;
-      const topCard = window.innerHeight;
-      if (cardposition < topCard - 100) {
-        setAnimation(true);
-      }
-    };
-    window.addEventListener("scroll", handelScroll);
-    handelScroll();
-    return () => {
-      window.removeEventListener("scroll", handelScroll);
-    };
-  }, [animation]);
   return (
-    <div ref={cardRef} className={styles.body}>
+    <div ref={innerRef} className={styles.body}>
       <div
         className={`${styles.dividercontainer} ${
           animation ? styles.heading : ""
