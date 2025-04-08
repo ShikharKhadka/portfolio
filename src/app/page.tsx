@@ -8,6 +8,7 @@ import { Academic } from "./component/academic/academic";
 import { Tools } from "./component/tools/tools";
 import Image from "next/image";
 import { Projectshowcase } from "./component/project_showcase/project_showcase";
+import { Others } from "./component/others/others";
 
 const CanvasExample = () => {
   const menuList = ["Home", "Experience", "Education ", "Tools"];
@@ -278,6 +279,7 @@ const CanvasExample = () => {
         <Experience innerref={bodyRef} animation={animation.experience} />
         <Tools innerRef={toolsRef} animation={animation.tools} />
         <Projectshowcase />
+        <Others />
       </div>
     </div>
   );

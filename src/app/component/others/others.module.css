@@ -1,0 +1,110 @@
+.body {
+  margin: 100px 100px 100px 100px;
+}
+.horizantaldivider {
+  height: 2%;
+  flex: 1;
+  border: 1px solid rgba(75, 0, 16, 0.5);
+}
+
+@keyframes expandWidth {
+  to {
+    width: 400px;
+  }
+}
+@keyframes expandWidth1 {
+  to {
+    width: 350px;
+  }
+}
+@keyframes expandWidth2 {
+  to {
+    width: 300px;
+  }
+}
+@keyframes expandWidth3 {
+  to {
+    width: 400px;
+  }
+}
+@keyframes expandWidth4 {
+  to {
+    width: 420px;
+  }
+}
+@keyframes expandWidth5 {
+  to {
+    width: 300px;
+  }
+}
+@keyframes expandWidth6 {
+  to {
+    width: 420px;
+  }
+}
+@keyframes expandWidth7 {
+  to {
+    width: 420px;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes percfadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.text {
+  animation: hidetext 1s ease-in;
+}
+.perecentext {
+  animation: percfadeIn 5s ease-in;
+}
+
+.box {
+  height: 50px;
+  width: 0px;
+  margin: 8px;
+  border-radius: 20px;
+}
+
+.firstanimation {
+  background-color: rgb(128, 128, 128, 0.5);
+  animation: expandWidth 1s forwards, fadeIn 1s ease forwards;
+}
+
+.secondanimation {
+  background-color: rgb(128, 128, 128, 0.5);
+  animation: expandWidth1 1s forwards, fadeIn 1s ease forwards;
+}
+.thirdanimation {
+  background-color: rgb(128, 128, 128, 0.5);
+  animation: expandWidth2 1s forwards, fadeIn 1s ease forwards;
+}
+.fourthanimation {
+  background-color: rgb(128, 128, 128, 0.5);
+  animation: expandWidth3 1s forwards, fadeIn 1s ease forwards;
+}
+.fifthanimation {
+  background-color: rgb(128, 128, 128, 0.5);
+  animation: expandWidth4 1s forwards, fadeIn 1s ease forwards;
+}
+.sixthanimation {
+  background-color: rgb(128, 128, 128, 0.5);
+  animation: expandWidth5 1s forwards, fadeIn 1s ease forwards;
+}
+.seventhanimation {
+  background-color: rgb(128, 128, 128, 0.5);
+  animation: expandWidth6 1s forwards, fadeIn 1s ease forwards;
+}

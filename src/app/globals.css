@@ -29,6 +29,15 @@ body {
   word-spacing: 2;
 }
 
+.colortext {
+  font-family: var(--font-mont_serrat);
+  font-weight: 300;
+  font-size: 16px;
+  font-style: normal;
+  word-spacing: 2;
+  color: #4b0010;
+}
+
 .h1 {
   font-family: var(--font-mont_serrat);
   font-weight: bold;
@@ -64,6 +73,16 @@ body {
 }
 .contextmargin {
   margin-bottom: 60px;
+}
+.hcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.vcenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 * {
