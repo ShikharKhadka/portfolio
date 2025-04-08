@@ -185,19 +185,7 @@ const CanvasExample = () => {
           height: "100vh",
         }}
       >
-        <div
-          style={{
-            border: "2px solid rgba(75, 0, 16, 0.5)",
-            display: "flex",
-            flexDirection: "column",
-            padding: "21px 10px 21px 10px",
-            gap: "40px",
-            borderRadius: "20px",
-            cursor: "pointer",
-            overflow: "hidden",
-            position: "relative",
-          }}
-        >
+        <div className={styles.leftmenu}>
           {menuList.map((e, index) => (
             <div
               className={`${index == i ? styles.active : ""}`}
@@ -279,7 +267,7 @@ const CanvasExample = () => {
         <Experience innerref={bodyRef} animation={animation.experience} />
         <Tools innerRef={toolsRef} animation={animation.tools} />
         <Projectshowcase />
-        <Others />
+        {/* <Others /> */}
       </div>
     </div>
   );

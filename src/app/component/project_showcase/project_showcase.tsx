@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const Projectshowcase = () => {
   return (
-    <div className={styles.body}>
+    <div className={styles.body} style={{}}>
       <div
         style={{
           display: "flex",
