@@ -37,7 +37,7 @@ export const Others = () => {
         <div className="h1">Contact</div>
         <div className={styles.horizantaldivider}></div>
       </div>
-      <div style={{ display: "flex" }}>
+      <div className={styles.content}>
         <div className={`${"vcenter"}`} style={{ flex: 3 }}>
           <SkillComponent
             label="Flutter"
@@ -89,7 +89,7 @@ export const Others = () => {
             percent="95"
           />
         </div>
-        <div style={{}}>
+        <div className={styles.vline}>
           <canvas ref={canvasRef}></canvas>
         </div>
         <div

@@ -1,5 +1,41 @@
-.body {
-  margin: 100px 100px 100px 100px;
+@media (max-width: 480px) {
+  .body {
+    margin: 100px 0px 0px 0px;
+  }
+  .vline {
+    display: none;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 4px 4px 30px 4px;
+  }
+}
+
+@media ((min-width: 481px) and (max-width : 1023px)) {
+  .body {
+    margin: 100px 0px 100px 0px;
+  }
+  .vline {
+    display: none;
+  }
+  .content {
+    display: flex;
+  }
+}
+
+@media (min-width: 1024px) {
+  .body {
+    margin: 100px 100px 100px 100px;
+  }
+  .vline {
+    flex: 1;
+    background-color: "red";
+  }
+  .content {
+    display: flex;
+  }
 }
 .horizantaldivider {
   height: 2%;
@@ -9,42 +45,42 @@
 
 @keyframes expandWidth {
   to {
-    width: 400px;
+    width: 100%;
   }
 }
 @keyframes expandWidth1 {
   to {
-    width: 350px;
+    width: 95%;
   }
 }
 @keyframes expandWidth2 {
   to {
-    width: 300px;
+    width: 70%;
   }
 }
 @keyframes expandWidth3 {
   to {
-    width: 400px;
+    width: 60%;
   }
 }
 @keyframes expandWidth4 {
   to {
-    width: 420px;
+    width: 98%;
   }
 }
 @keyframes expandWidth5 {
   to {
-    width: 300px;
+    width: 70%;
   }
 }
 @keyframes expandWidth6 {
   to {
-    width: 420px;
+    width: 98%;
   }
 }
 @keyframes expandWidth7 {
   to {
-    width: 420px;
+    width: 98%;
   }
 }
 @keyframes fadeIn {

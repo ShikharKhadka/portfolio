@@ -267,7 +267,7 @@ const CanvasExample = () => {
         <Experience innerref={bodyRef} animation={animation.experience} />
         <Tools innerRef={toolsRef} animation={animation.tools} />
         <Projectshowcase />
-        {/* <Others /> */}
+        <Others />
       </div>
     </div>
   );
