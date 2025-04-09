@@ -161,7 +161,7 @@ a.secondary {
   font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  color: rgba(75, 0, 16, 0.5);
+  color: rgba(75, 0, 16);
   animation: mymenu 1s;
   position: relative;
 }
@@ -199,7 +199,6 @@ a.secondary {
 .semicircle {
   width: 100px; /* Adjust size */
   height: 50px; /* Half of width to create semi-circle */
-  background-color: blue; /* Change color as needed */
   border-top-left-radius: 100px; /* Large radius to create curve */
   border-top-right-radius: 100px;
   position: fixed;
