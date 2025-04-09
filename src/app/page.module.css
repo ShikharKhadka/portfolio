@@ -375,9 +375,9 @@ a.secondary {
     background-color: rgba(0, 0, 0, 0.9);
     border-radius: 50%;
     position: absolute;
-    top: 40;
-    right: 100;
-    animation: imageContainer normal 2s;
+    top: 40px;
+    right: 100px;
+    /* animation: imageContainer normal 2s; */
     /* right: 200px; */
   }
   .heading {
