@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "shikhar-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "homepage": "https://gitname.github.io/shikhar-portfolio"
   },
   "dependencies": {
     "next": "15.1.4",
