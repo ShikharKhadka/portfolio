@@ -377,8 +377,7 @@ a.secondary {
     position: absolute;
     top: 40px;
     right: 100px;
-    /* animation: imageContainer normal 2s; */
-    /* right: 200px; */
+    animation: imageContainer normal 2s;
   }
   .heading {
     display: flex;
