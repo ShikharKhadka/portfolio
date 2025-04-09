@@ -5,6 +5,14 @@
   }
   to {
     top: 0px;
+    opacity: 2;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
     opacity: 1;
   }
 }
@@ -59,7 +67,7 @@
     : 100vh; */
   }
   .heading {
-    animation: cardContainer 1s ease-out forwards;
+    animation: cardContainer 1s ease-out forwards, fadeIn 1s ease alternate;
     position: relative;
   }
   .capsule {

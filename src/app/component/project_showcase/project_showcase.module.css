@@ -1,3 +1,23 @@
+@keyframes animate {
+  from {
+    top: -40px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 480px) {
   .body {
     margin: 100px 0px 0 0px;
@@ -229,6 +249,10 @@
 
   .imgheight:hover + .title {
     box-shadow: 4px 4px rgba(0, 0, 0, 0.4);
+  }
+  .animation {
+    animation: animate 1s ease-out forwards, fadeIn 1s ease;
+    position: relative;
   }
 }
 

@@ -2,10 +2,17 @@ import React from "react";
 import styles from "../project_showcase/project_showcase.module.css";
 import Image from "next/image";
 
-export const Projectshowcase = () => {
+export const Projectshowcase = ({
+  innerRef,
+  animation,
+}: {
+  innerRef: React.RefObject<HTMLDivElement | null>;
+  animation: boolean;
+}) => {
   return (
-    <div className={styles.body} style={{}}>
+    <div ref={innerRef} className={styles.body}>
       <div
+        className={animation ? styles.animation : ""}
         style={{
           display: "flex",
           justifyContent: "center",
@@ -16,7 +23,7 @@ export const Projectshowcase = () => {
         <div className={styles.horizantaldivider}></div>
         <div className={"h1"}>Project Showcase</div>
       </div>
-      <div className={styles.box}>
+      <div className={`${styles.box} ${animation ? styles.animation : ""}`}>
         <div className={styles.box1}>
           <ImageComponent src={"/images/sample1.JPG"} />
         </div>

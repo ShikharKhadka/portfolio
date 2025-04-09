@@ -1,3 +1,23 @@
+@keyframes cardContainer {
+  from {
+    top: -40px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 480px) {
   .body {
     margin: 100px 0px 0 0px;
@@ -48,16 +68,6 @@
   }
 }
 
-@keyframes cardContainer {
-  from {
-    top: -40px;
-    opacity: 0;
-  }
-  to {
-    top: 0px;
-    opacity: 1;
-  }
-}
 @media (min-width: 1024px) {
   .body {
     margin: 100px 100px 0 100px;
@@ -79,7 +89,7 @@
   }
 
   .firstcard.animate {
-    animation: cardContainer 1s ease-out forwards;
+    animation: cardContainer 1s ease-out forwards, fadeIn 1s ease;
   }
   .secondcard {
     min-height: 170px;
@@ -89,7 +99,7 @@
     padding: 30px; */
   }
   .secondcard.animate {
-    animation: cardContainer 1s ease-out forwards;
+    animation: cardContainer 1s ease-out forwards, fadeIn 1s ease;
   }
 }
 .heading {
@@ -100,7 +110,7 @@
   position: relative;
 }
 .heading.animate {
-  animation: cardContainer 1s ease-out forwards;
+  animation: cardContainer 1s ease-out forwards, fadeIn 1s ease;
 }
 .containercard {
   display: flex;

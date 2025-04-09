@@ -11,13 +11,21 @@ import { Projectshowcase } from "./component/project_showcase/project_showcase";
 import { Others } from "./component/others/others";
 
 const CanvasExample = () => {
-  const menuList = ["Home", "Experience", "Education ", "Tools"];
+  const menuList = [
+    "Home",
+    "Experience",
+    "Education ",
+    "Tools",
+    "Projects",
+    "Skills",
+  ];
   const imagePath = [
     "/menu/man.png",
     "/education.png",
     "/menu/briefcase.png",
     "/menu/settings.png",
-    // "/menu/project",
+    "/menu/project.png",
+    "/menu/skills.png",
   ];
   // const menuList = ["Home", "Education", "Experience", "Skills"];
 
@@ -25,11 +33,15 @@ const CanvasExample = () => {
   const bodyRef = useRef<HTMLDivElement>(null);
   const academicRef = useRef<HTMLDivElement>(null);
   const toolsRef = useRef<HTMLDivElement>(null);
+  const projectRef = useRef<HTMLDivElement>(null);
+  const othersRef = useRef<HTMLDivElement>(null);
 
   const [i, seti] = useState(0);
   const [animation, setAnimation] = useState({
     experience: false,
     tools: false,
+    project: false,
+    others: false,
   });
   const [position, setposition] = useState({
     index: i,
@@ -37,6 +49,8 @@ const CanvasExample = () => {
       academic: 0,
       experience: 0,
       tools: 0,
+      project: 0,
+      others: 0,
     },
   });
 
@@ -55,7 +69,15 @@ const CanvasExample = () => {
       window.scrollTo({ behavior: "smooth", top: position.type.experience });
       return;
     }
-    window.scrollTo({ behavior: "smooth", top: position.type.tools });
+    if (index == 3) {
+      window.scrollTo({ behavior: "smooth", top: position.type.tools });
+      return;
+    }
+    if (index == 4) {
+      window.scrollTo({ behavior: "smooth", top: position.type.project });
+      return;
+    }
+    window.scrollTo({ behavior: "smooth", top: position.type.others });
   };
 
   useEffect(() => {
@@ -78,15 +100,14 @@ const CanvasExample = () => {
   useEffect(() => {
     const handelScroll = () => {
       if (!bodyRef.current) return;
-      const cardPosition =
-        bodyRef.current.getBoundingClientRect().top + window.scrollY;
+      const cardPosition = bodyRef.current.getBoundingClientRect().top;
       const windowHeight = window.innerHeight;
       if (cardPosition < windowHeight - 100) {
         setAnimation((prev) => ({ ...prev, experience: true }));
       }
       setposition((prev) => ({
         ...prev,
-        type: { ...prev.type, experience: cardPosition },
+        type: { ...prev.type, experience: cardPosition + window.scrollY },
       }));
       // console.log(cardPosition, "this is card expereince");
     };
@@ -95,20 +116,19 @@ const CanvasExample = () => {
     return () => {
       window.removeEventListener("scroll", handelScroll);
     };
-  }, [i]);
+  }, [i, animation.experience]);
 
   useEffect(() => {
     const handelScroll = () => {
       if (!toolsRef.current) return;
-      const cardPosition =
-        toolsRef.current.getBoundingClientRect().top + window.scrollY;
+      const cardPosition = toolsRef.current.getBoundingClientRect().top;
       const windowHeight = window.innerHeight;
       if (cardPosition < windowHeight - 100) {
         setAnimation((prev) => ({ ...prev, tools: true }));
       }
       setposition((prev) => ({
         ...prev,
-        type: { ...prev.type, tools: cardPosition },
+        type: { ...prev.type, tools: cardPosition + window.scrollY },
       }));
     };
 
@@ -118,11 +138,74 @@ const CanvasExample = () => {
     return () => {
       window.removeEventListener("scroll", handelScroll);
     };
-  }, [i]);
+  }, [i, animation.tools]);
 
   useEffect(() => {
-    // console.log(position, "This is position");
-  }, [position]);
+    const handelScroll = () => {
+      if (!projectRef.current) return;
+      const cardPosition = projectRef.current.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (cardPosition < windowHeight - 100) {
+        setAnimation((prev) => ({ ...prev, tools: true }));
+      }
+      setposition((prev) => ({
+        ...prev,
+        type: { ...prev.type, project: cardPosition + window.scrollY },
+      }));
+    };
+
+    window.addEventListener("scroll", handelScroll);
+    handelScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handelScroll);
+    };
+  }, [i, animation.project]);
+
+  useEffect(() => {
+    const handelScroll = () => {
+      if (!projectRef.current) return;
+      const cardPosition = projectRef.current.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (cardPosition < windowHeight - 100) {
+        setAnimation((prev) => ({ ...prev, project: true }));
+      }
+      setposition((prev) => ({
+        ...prev,
+        type: { ...prev.type, project: cardPosition + window.scrollY },
+      }));
+    };
+
+    window.addEventListener("scroll", handelScroll);
+    handelScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handelScroll);
+    };
+  }, [i, animation.project]);
+
+  useEffect(() => {
+    const handelScroll = () => {
+      if (!othersRef.current) return;
+      const cardPosition = othersRef.current.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (cardPosition < windowHeight - 100) {
+        setAnimation((prev) => ({ ...prev, others: true }));
+      }
+      setposition((prev) => ({
+        ...prev,
+        type: { ...prev.type, others: cardPosition + window.scrollY },
+      }));
+    };
+
+    window.addEventListener("scroll", handelScroll);
+    handelScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handelScroll);
+    };
+  }, [i, animation.others]);
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (canvas != null) {
@@ -266,8 +349,8 @@ const CanvasExample = () => {
         <Academic innerref={academicRef} />
         <Experience innerref={bodyRef} animation={animation.experience} />
         <Tools innerRef={toolsRef} animation={animation.tools} />
-        <Projectshowcase />
-        <Others />
+        <Projectshowcase innerRef={projectRef} animation={animation.project} />
+        <Others innerRef={othersRef} animation={animation.others} />
       </div>
     </div>
   );

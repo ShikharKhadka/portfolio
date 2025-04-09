@@ -4,7 +4,13 @@ import SkillComponent from "./component/skills";
 import { ContantInfo } from "./component/contant_info";
 import { Media } from "./component/media";
 
-export const Others = () => {
+export const Others = ({
+  innerRef,
+  animation,
+}: {
+  innerRef: React.RefObject<HTMLDivElement | null>;
+  animation: boolean;
+}) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -23,7 +29,7 @@ export const Others = () => {
     }
   }, []);
   return (
-    <div className={styles.body}>
+    <div ref={innerRef} className={styles.body}>
       <div
         style={{
           display: "flex",
@@ -40,51 +46,58 @@ export const Others = () => {
       <div className={styles.content}>
         <div className={`${"vcenter"}`} style={{ flex: 3 }}>
           <SkillComponent
+            animation={animation}
             label="Flutter"
             className={`${styles.box} ${
-              styles.firstanimation
+              animation ? styles.firstanimation : ""
             } ${"hcenter"} ${"h1"} `}
             percent="95"
           />
           <SkillComponent
+            animation={animation}
             label="Dart"
             className={`${styles.box} ${
-              styles.secondanimation
+              animation ? styles.secondanimation : ""
             } ${"hcenter"} ${"h1"} `}
             percent="95"
           />
           <SkillComponent
+            animation={animation}
             label="React"
             className={`${styles.box} ${
-              styles.thirdanimation
+              animation ? styles.thirdanimation : ""
             } ${"hcenter"} ${"h1"} `}
             percent="90"
           />
           <SkillComponent
+            animation={animation}
             label="JavaScript"
             className={`${styles.box} ${
-              styles.fourthanimation
+              animation ? styles.fourthanimation : ""
             } ${"hcenter"} ${"h1"} `}
             percent="88"
           />
           <SkillComponent
+            animation={animation}
             label="Rest Api"
             className={`${styles.box} ${
-              styles.fifthanimation
+              animation ? styles.fifthanimation : ""
             } ${"hcenter"} ${"h1"} `}
             percent="95"
           />
           <SkillComponent
+            animation={animation}
             label="Next js"
             className={`${styles.box} ${
-              styles.sixthanimation
+              animation ? styles.sixthanimation : ""
             } ${"hcenter"} ${"h1"} `}
             percent="90"
           />
           <SkillComponent
+            animation={animation}
             label="Typescript"
             className={`${styles.box} ${
-              styles.seventhanimation
+              animation ? styles.seventhanimation : ""
             } ${"hcenter"} ${"h1"} `}
             percent="95"
           />
