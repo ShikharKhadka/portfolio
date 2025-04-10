@@ -329,13 +329,15 @@ const CanvasExample = () => {
                   songs, futsal and cricket.
                 </div>
                 <div>
-                  <button
+                  <a
                     className={`${"button"} ${"hcenter"}`}
                     style={{
                       margin: "10px 0 10px 0px",
                       display: "flex",
                       color: "#4b0010",
                     }}
+                    href={"/files/hiring.pdf"}
+                    download="YourName resume.pdf"
                   >
                     Resume
                     <span
@@ -349,7 +351,7 @@ const CanvasExample = () => {
                         height={16}
                       />
                     </span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
