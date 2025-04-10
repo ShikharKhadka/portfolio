@@ -15,65 +15,58 @@ export const Academic = ({
 }) => {
   const academicData: AcademicData[] = [
     {
-      title: "What is Lorem Ipsum?",
+      title: "React Developer at Pioneer Associate(Currently Working)",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
-      startDate: "2015",
-      endDate: "2017",
+        "Developing responsive web app using Javascript, Nextjs, TypeScript and Rest APi for fetching data i.e AMS(Accounting Management System).",
+      startDate: "2024",
+      endDate: "",
     },
     {
-      title: "What is Lorem Ipsum?",
+      title: "Flutter Developer at Pioneer Associate(Mid level)",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-      startDate: "2015",
-      endDate: "2017",
+        "Devloping cross platform app using flutter with dart sdk and Rest APi for fetching data i.e fintech, erp ",
+      startDate: "2025",
+      endDate: "2023",
     },
     {
-      title: "What is Lorem Ipsum?",
+      title: "Flutter Development at Prixa Technology (Junior)",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-      startDate: "2015",
-      endDate: "2017",
+        "Devloping cross platform app using flutter with dart sdk and Rest APi for fetching data i.e. news app, tv app and testing apis ",
+      startDate: "2022",
+      endDate: "2023",
     },
     {
-      title: "What is Lorem Ipsum?",
+      title: "Flutter Development at Prixa Technology (Intern)",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-      startDate: "2015",
-      endDate: "2017",
+        "Researching cross platform app using flutter with dart sdk and Rest APi for fetching data i.e. responsive desing, api intregration",
+      startDate: "2022",
+      endDate: "2022",
     },
     {
-      title: "What is Lorem Ipsum?",
+      title: "College Project(Final year Project)",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-      startDate: "2015",
-      endDate: "2017",
-    },
-    {
-      title: "What is Lorem Ipsum?",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-      startDate: "2015",
-      endDate: "2017",
+        "Research on software development with requirement analysis, sotfware architecture and development using java and firebase.Futsal Booking",
+      startDate: "2021",
+      endDate: "2021",
     },
   ];
   return (
     <div ref={innerref} className={styles.body}>
       <div className="h1" style={{ paddingBottom: "12px" }}>
-        Lorem Ipsum
+        Experience
       </div>
       <div className={styles.heading}>
-        <div className={`${styles.hcontent1} ${"h2"}`}>
-          Lorem IpsumLorem Ipsum is a long established fact that a reader will
+        <div className={`${styles.hcontent1} ${"h3"}`}>
+          A Yearly snapshot of my career growth
         </div>
         <div className={styles.hcontent2}>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the.
+          An anual sumary that summirize my creative journey and development
+          throughout the year.
         </div>
       </div>
       {academicData.map((e, index) => (
         <div key={index} className={styles.academic}>
-          <div>
+          <div style={{ width: "100%" }}>
             <div className={styles.academictext}>{e.title}</div>
             <div className={styles.academicdescription}>{e.description}</div>
           </div>

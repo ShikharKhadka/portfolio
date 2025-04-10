@@ -57,18 +57,20 @@
 
 .heading {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hcontent1 {
-  flex-basis: 2;
-  flex-grow: 1;
+  flex-basis: 0;
+  flex-grow: 2;
 }
 
 .hcontent2 {
   flex-basis: 0;
   flex-grow: 1;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   color: rgb(97, 96, 96, 0.8);
   margin-right: 10px;
@@ -87,7 +89,7 @@
 }
 .academictext {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   padding-bottom: 8px;
   color: #4b0010;
@@ -96,7 +98,7 @@
   font-weight: 400;
   font-size: 14px;
   font-style: normal;
-  color: rgb(97, 96, 96, 0.8);
+  color: rgb(97, 96, 96, 0.9);
 }
 
 .academicendyear {
@@ -108,7 +110,6 @@
 }
 
 .dash {
-  flex-basis: auto;
   font-weight: 500;
   font-size: 26px;
   color: #4b0010;

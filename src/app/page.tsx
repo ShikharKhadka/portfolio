@@ -314,36 +314,51 @@ const CanvasExample = () => {
                 ))}
               </div>
               <div>
-                <div className="h1">Lorem Ipsum</div>
+                <div className="h1">Shikhar Khadka (Frontend Developer)</div>
                 <div className={`text ${styles.box}`}>
-                  Contrary to popular belief, Lorem Ipsum is not simply random
-                  text. It has roots in a piece of classical Latin literature
-                  from 45 BC, making it over 2000 years old. Richard McClintock,
-                  a Latin professor at Hampden-Sydney College in Virginia,
-                  looked up one of the more obscure Latin words, consectetur,
-                  from a Lorem Ipsum passage, and going through the cites of the
-                  word in classical literature, discovered the undoubtable
-                  source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of
-                  de Finibus Bonorum et Malorum (The Extremes of Good and Evil)
-                  by Cicero, written in 45 BC. This book is a treatise on the
-                  theory of ethics, very popular during the Renaissance. The
-                  first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes
-                  from a line in section 1.10.32
+                  I started programming during the Covid Pandemic in 2020. I am
+                  fluent in new like programming languages such as
+                  <span className="boldtext"> Flutter</span>,
+                  <span className="boldtext"> Dart</span>,
+                  <span className="boldtext"> Javascript</span>,
+                  <span className="boldtext"> React</span>,
+                  <span className="boldtext"> Typescript</span>. My field of
+                  Interest are building new Web Technologies and Products and
+                  also in areas related to Backend Services like nodejs. Beside
+                  from techncal site, my hobbies are playing game , listening
+                  songs, futsal and cricket.
                 </div>
-                <button
-                  className="button"
-                  style={{
-                    margin: "10px 0 10px 0px",
-                  }}
-                >
-                  Lorem Ipsum
-                </button>
+                <div>
+                  <button
+                    className={`${"button"} ${"hcenter"}`}
+                    style={{
+                      margin: "10px 0 10px 0px",
+                      display: "flex",
+                      color: "#4b0010",
+                    }}
+                  >
+                    Resume
+                    <span
+                      className={styles.bounce}
+                      style={{ marginTop: "4px", marginLeft: "4px" }}
+                    >
+                      <Image
+                        src={"/icons/download.png"}
+                        alt="download icon"
+                        width={16}
+                        height={16}
+                      />
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
           <div>
             <canvas ref={canvasRef} className={styles.semicirclecurve} />
-            <div className={styles.curve}></div>
+            <div className={styles.curve}>
+              <Image src={"/images/hero.png"} alt="hero" fill={true} />
+            </div>
           </div>
         </div>
         <Academic innerref={academicRef} />

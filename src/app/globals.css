@@ -38,6 +38,15 @@ body {
   color: #4b0010;
 }
 
+.boldtext {
+  font-family: var(--font-mont_serrat);
+  font-weight: 500;
+  font-size: 16px;
+  font-style: normal;
+  word-spacing: 2;
+  color: #4b0010;
+}
+
 .h1 {
   font-family: var(--font-mont_serrat);
   font-weight: bold;
@@ -49,14 +58,24 @@ body {
   height: 40px;
   width: 120px;
   padding: 4px;
+  font-size: 16px;
   border-radius: 6px;
-  background-color: #4b0010;
+  border: 1px solid #4b0010;
+  background-color: transparent;
 }
 
 .h2 {
   font-family: var(--font-cormorant_garamond);
   font-weight: 300;
   font-size: 18px;
+  letter-spacing: 2;
+  font-style: normal;
+}
+
+.h3 {
+  font-family: var(--font-cormorant_garamond);
+  font-weight: 300;
+  font-size: 32px;
   letter-spacing: 2;
   font-style: normal;
 }
