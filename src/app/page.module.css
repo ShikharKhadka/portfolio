@@ -369,7 +369,7 @@ a.secondary {
   }
   .heading {
     display: flex;
-    margin: 0 0 0 100px;
+    margin: 0 0 0 20px;
   }
   .headingc {
     display: flex;
@@ -378,7 +378,6 @@ a.secondary {
   }
   .menucontainer {
     display: none;
-    background-color: red;
   }
   .leftmenu {
     display: none;
