@@ -28,7 +28,7 @@ const CanvasExample = () => {
     "/menu/skills.png",
   ];
   // const menuList = ["Home", "Education", "Experience", "Skills"];
-
+  const masterRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
   const academicRef = useRef<HTMLDivElement>(null);
@@ -64,7 +64,6 @@ const CanvasExample = () => {
       window.scrollTo({ behavior: "smooth", top: position.type.academic });
       return;
     }
-
     if (index == 2) {
       window.scrollTo({ behavior: "smooth", top: position.type.experience });
       return;
@@ -96,6 +95,38 @@ const CanvasExample = () => {
       window.removeEventListener("scroll", handelScroll);
     };
   }, [i]);
+
+  useEffect(() => {
+    const handelScroll = () => {
+      if (position.type.tools == 0) return;
+      if (!masterRef.current) return;
+      const cardPosition = masterRef.current.getBoundingClientRect();
+      const masterposition = cardPosition.height - cardPosition.bottom;
+      if (masterposition < position.type.academic) {
+        seti(() => 0);
+      }
+      if (masterposition >= position.type.academic - 100) {
+        seti(() => 1);
+      }
+      if (masterposition >= position.type.experience - 100) {
+        seti(() => 2);
+      }
+      if (masterposition >= position.type.tools - 100) {
+        seti(() => 3);
+      }
+      if (masterposition >= position.type.project - 100) {
+        seti(() => 4);
+      }
+      if (masterposition >= position.type.others - 100) {
+        seti(() => 5);
+      }
+    };
+    window.addEventListener("scroll", handelScroll);
+    handelScroll();
+    return () => {
+      window.removeEventListener("scroll", handelScroll);
+    };
+  }, [position]);
 
   useEffect(() => {
     const handelScroll = () => {
@@ -256,7 +287,7 @@ const CanvasExample = () => {
   // };
 
   return (
-    <div style={{ display: "flex" }}>
+    <div ref={masterRef} style={{ display: "flex" }}>
       <div
         style={{
           display: "flex",
