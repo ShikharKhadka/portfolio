@@ -52,6 +52,7 @@ const CanvasExample = () => {
       project: 0,
       others: 0,
     },
+    showMenu: false,
   });
 
   const onClick = (index: number) => {
@@ -102,11 +103,14 @@ const CanvasExample = () => {
       if (!masterRef.current) return;
       const cardPosition = masterRef.current.getBoundingClientRect();
       const masterposition = cardPosition.height - cardPosition.bottom;
-      if (masterposition < position.type.academic) {
-        seti(() => 0);
+      if (masterposition < position.type.academic - 100) {
+        if (position.showMenu) {
+          setposition({ ...position, showMenu: false });
+        }
       }
       if (masterposition >= position.type.academic - 100) {
         seti(() => 1);
+        if (!position.showMenu) setposition({ ...position, showMenu: true });
       }
       if (masterposition >= position.type.experience - 100) {
         seti(() => 2);
@@ -140,7 +144,6 @@ const CanvasExample = () => {
         ...prev,
         type: { ...prev.type, experience: cardPosition + window.scrollY },
       }));
-      // console.log(cardPosition, "this is card expereince");
     };
     window.addEventListener("scroll", handelScroll);
     handelScroll();
@@ -299,30 +302,32 @@ const CanvasExample = () => {
           height: "100vh",
         }}
       >
-        <div className={styles.leftmenu}>
-          {menuList.map((e, index) => (
-            <div
-              className={`${index == i ? styles.active : ""}`}
-              key={index}
-              onClick={() => {
-                onClick(index);
-              }}
-              style={{
-                border: i == index ? " 1px solid rgba(75, 0, 16,0.8)" : "",
-                padding: "2px",
-                borderRadius: "6px",
-              }}
-            >
-              <Image
+        {position.showMenu && (
+          <div className={styles.leftmenu}>
+            {menuList.map((e, index) => (
+              <div
+                className={`${index == i ? styles.active : ""}`}
                 key={index}
-                height={20}
-                width={20}
-                src={imagePath[index]}
-                alt="This icon"
-              />
-            </div>
-          ))}
-        </div>
+                onClick={() => {
+                  onClick(index);
+                }}
+                style={{
+                  border: i == index ? " 1px solid rgba(75, 0, 16,0.8)" : "",
+                  padding: "2px",
+                  borderRadius: "6px",
+                }}
+              >
+                <Image
+                  key={index}
+                  height={20}
+                  width={20}
+                  src={imagePath[index]}
+                  alt="This icon"
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <div className={styles.heading}>
