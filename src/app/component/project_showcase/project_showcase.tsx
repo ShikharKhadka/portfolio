@@ -25,35 +25,75 @@ export const Projectshowcase = ({
       </div>
       <div className={`${styles.box} ${animation ? styles.animation : ""}`}>
         <div className={styles.box1}>
-          <ImageComponent src={"/images/sample1.JPG"} />
+          <ImageComponent
+            src={"/projects/portfolio.JPG"}
+            title="Portfolio"
+            discription="This is my professional experience"
+          />
         </div>
         <div className={styles.box2}>
-          <ImageComponent src={"/images/sample1.JPG"} />
+          <ImageComponent
+            src={"/projects/ams.JPG"}
+            title="Accounting Management Sysytem(AMS)"
+            discription="A software that tracks inventory, sales, purchase and for IRD"
+          />
         </div>
         <div className={styles.box3}>
-          <ImageComponent src={"/images/sample1.JPG"} />
+          <ImageComponent
+            src={"/projects/janaastha.JPG"}
+            title="JanaAstha"
+            discription="News Application "
+          />
         </div>
         <div className={styles.box4}>
-          <ImageComponent src={"/images/sample1.JPG"} />
+          <ImageComponent
+            src={"/projects/newstalk.JPG"}
+            title="News Talk"
+            discription="News Application with similar to tiktok"
+          />
         </div>
         <div className={styles.box5}>
-          <ImageComponent src={"/images/sample1.JPG"} />
+          <ImageComponent
+            src={"/projects/ocw.JPG"}
+            title="Online Check Writer"
+            discription="Fintech Application And Cloud Banking"
+          />
         </div>
         <div className={styles.box6}>
-          <ImageComponent src={"/images/sample1.JPG"} />
+          <ImageComponent
+            src={"/projects/remainder.JPG"}
+            title="Remainder App"
+            discription="Personal Project with calendar and remainder"
+          />
         </div>
         <div className={styles.box7}>
-          <ImageComponent src={"/images/sample1.JPG"} />
+          <ImageComponent
+            src={"/projects/remainder_home.JPG"}
+            title="Remainder App"
+            discription="Personal Project with calendar and remainder"
+          />
         </div>
         <div className={styles.box8}>
-          <ImageComponent src={"/images/sample1.JPG"} />
+          <ImageComponent
+            src={"/projects/cosys.JPG"}
+            title="Cosys Mobile Manking"
+            discription="Fintech Application"
+          />
         </div>
       </div>
     </div>
   );
 };
 
-const ImageComponent = ({ src }: { src: string }) => {
+const ImageComponent = ({
+  src,
+  title,
+  discription,
+}: {
+  src: string;
+  title: string;
+  discription: string;
+}) => {
   return (
     <div style={{ height: "100%" }}>
       <div className={styles.imgheight}>
@@ -66,9 +106,9 @@ const ImageComponent = ({ src }: { src: string }) => {
       </div>
       <div className={styles.title}>
         <div className="h1" style={{ fontSize: "18px" }}>
-          Revo
+          {title}
         </div>
-        <div className="text">Sas Farmer Template</div>
+        <div className="text">{discription}</div>
       </div>
     </div>
   );

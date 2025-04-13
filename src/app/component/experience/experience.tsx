@@ -19,21 +19,21 @@ export const Experience = ({
   const educationList: EducationI[] = [
     {
       level: "Bachelor in Information Technology ",
-      college: "Herald College, university of Cambridge",
+      college: "Isligton College, London Metropolitan",
       duration: "2017-2021",
       location: "Hattisar,Kathmandu",
     },
     {
-      level: "Bachelor in Information Technology ",
-      college: "Herald College, university of Cambridge",
-      duration: "2017-2021",
-      location: "Hattisar,Kathmandu",
+      level: "Higher Secondary Level(+2)",
+      college: "Global College of Management",
+      duration: "2015-2016",
+      location: "Old Baneshwor,Kathmandu",
     },
     {
-      level: "Bachelor in Information Technology ",
-      college: "Herald College, university of Cambridge",
-      duration: "2017-2021",
-      location: "Hattisar,Kathmandu",
+      level: "Secondary Level",
+      college: "Tungram International Academy",
+      duration: "2010-2014",
+      location: "Hattigawuda,Kathmandu",
     },
   ];
   const iconList: string[] = ["/education.png", "/two-books.png", "/book.png"];
@@ -55,7 +55,7 @@ export const Experience = ({
       <div
         className={`h1 ${styles.heading} ${animation ? styles.animate : ""}`}
       >
-        <div> Lorem Ipsum</div>
+        <div> Education</div>
         <div className={styles.horizantaldivider} />
       </div>
       <div className={styles.container}>
