@@ -336,7 +336,7 @@ const CanvasExample = () => {
                       display: "flex",
                       color: "#4b0010",
                     }}
-                    href={"/files/hiring.pdf"}
+                    href={"/files/resume.pdf"}
                     download="YourName resume.pdf"
                   >
                     Resume
