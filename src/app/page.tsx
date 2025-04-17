@@ -399,7 +399,7 @@ const CanvasExample = () => {
           <div>
             <canvas ref={canvasRef} className={styles.semicirclecurve} />
             <div className={styles.curve}>
-              <Image src={"/images/hero.png"} alt="hero" fill={true} />
+              {/* <Image src={"/images/hero.png"} alt="hero" fill={true} /> */}
             </div>
           </div>
         </div>
