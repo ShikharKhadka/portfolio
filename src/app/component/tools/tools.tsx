@@ -49,49 +49,52 @@ export const Tools = ({
 
   return (
     <div ref={innerRef} className={styles.body}>
-      <div
-        className={`${styles.dividercontainer} ${
-          animation ? styles.heading : ""
-        }`}
-      >
-        <div className={`${styles.divider}`}></div>
-        <div className={`${"h2"} ${"center"}`}>Exploring the tools</div>
-        <div className={`${"h1"} ${"center"}}`}>Behind My Work</div>
-        <div className={styles.divider}></div>
-      </div>
-
-      <div
-        className={`${animation ? styles.box : ""}`}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          paddingBottom: "70px",
-          flexFlow: "wrap",
-        }}
-      >
-        {capsuleList.map((e, index) => (
-          <div key={index}>
-            <div className={`${styles.capsule}`}>
-              <Image
-                className={styles.img}
-                src={e.image}
-                alt="image"
-                height={30}
-                width={100}
-              />
-              <div className={styles.percent}>{e.percentage}</div>
-            </div>
-            <div
-              className="h2"
-              style={{
-                textAlign: "center",
-              }}
-            >
-              {e.name}
-            </div>
+      {animation && (
+        <>
+          <div
+            className={`${styles.dividercontainer} ${
+              animation ? styles.heading : ""
+            }`}
+          >
+            <div className={`${styles.divider}`}></div>
+            <div className={`${"h2"} ${"center"}`}>Exploring the tools</div>
+            <div className={`${"h1"} ${"center"}}`}>Behind My Work</div>
+            <div className={styles.divider}></div>
           </div>
-        ))}
-      </div>
+          <div
+            className={`${animation ? styles.box : ""}`}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              paddingBottom: "70px",
+              flexFlow: "wrap",
+            }}
+          >
+            {capsuleList.map((e, index) => (
+              <div key={index}>
+                <div className={`${styles.capsule}`}>
+                  <Image
+                    className={styles.img}
+                    src={e.image}
+                    alt="image"
+                    height={30}
+                    width={100}
+                  />
+                  <div className={styles.percent}>{e.percentage}</div>
+                </div>
+                <div
+                  className="h2"
+                  style={{
+                    textAlign: "center",
+                  }}
+                >
+                  {e.name}
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };

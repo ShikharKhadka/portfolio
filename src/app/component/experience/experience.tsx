@@ -52,83 +52,97 @@ export const Experience = ({
 
   return (
     <div ref={innerref} className={styles.body}>
-      <div
-        className={`h1 ${styles.heading} ${animation ? styles.animate : ""}`}
-      >
-        <div> Education</div>
-        <div className={styles.horizantaldivider} />
-      </div>
-      <div className={styles.container}>
-        <div className={`${styles.containercard}`}>
-          {educationList.map((e, index) => (
-            <div key={index}>
-              {index % 2 == 0 ? (
-                <div
-                  key={index}
-                  className={`${styles.card} ${styles.firstcard} ${
-                    styles.boxshadowcard
-                  } ${animation ? styles.animate : ""} `}
-                >
-                  <div className={styles.cardHeading}>{e.level}</div>
-                  <div className={styles.cardcollegeName}>{e.college}</div>
-                  <div className={styles.cardcollegeLocation}>{e.duration}</div>
-                  <div className={styles.cardcollegeLocation}>{e.location}</div>
+      {animation && (
+        <>
+          <div
+            className={`h1 ${styles.heading} ${
+              animation ? styles.animate : ""
+            }`}
+          >
+            <div> Education</div>
+            <div className={styles.horizantaldivider} />
+          </div>
+          <div className={styles.container}>
+            <div className={`${styles.containercard}`}>
+              {educationList.map((e, index) => (
+                <div key={index}>
+                  {index % 2 == 0 ? (
+                    <div
+                      key={index}
+                      className={`${styles.card} ${styles.firstcard} ${
+                        styles.boxshadowcard
+                      } ${animation ? styles.animate : ""} `}
+                    >
+                      <div className={styles.cardHeading}>{e.level}</div>
+                      <div className={styles.cardcollegeName}>{e.college}</div>
+                      <div className={styles.cardcollegeLocation}>
+                        {e.duration}
+                      </div>
+                      <div className={styles.cardcollegeLocation}>
+                        {e.location}
+                      </div>
+                    </div>
+                  ) : (
+                    <div
+                      key={index}
+                      className={`${styles.card} ${styles.firstcard} ${styles.whitecard}`}
+                    ></div>
+                  )}
                 </div>
-              ) : (
-                <div
-                  key={index}
-                  className={`${styles.card} ${styles.firstcard} ${styles.whitecard}`}
-                ></div>
-              )}
+              ))}
             </div>
-          ))}
-        </div>
 
-        <div className={`${styles.divider}`}>
-          {iconList.map((e, index) => (
-            <div key={index}>
-              {
-                <div key={index} className={styles.dividercontainer}>
-                  <div className={styles.circle}>
-                    <Image
-                      className="img"
-                      src={e}
-                      alt="Picture of the author"
-                      width={50}
-                      height={50}
-                      color="red"
-                    />
-                  </div>
+            <div className={`${styles.divider}`}>
+              {iconList.map((e, index) => (
+                <div key={index}>
+                  {
+                    <div key={index} className={styles.dividercontainer}>
+                      <div className={styles.circle}>
+                        <Image
+                          className="img"
+                          src={e}
+                          alt="Picture of the author"
+                          width={50}
+                          height={50}
+                          color="red"
+                        />
+                      </div>
+                    </div>
+                  }
                 </div>
-              }
+              ))}
             </div>
-          ))}
-        </div>
-        <div className={`${styles.containercard} ${styles.rightcard}`}>
-          {educationList.map((e, index) => (
-            <div key={index}>
-              {!(index % 2 == 0) ? (
-                <div
-                  key={index}
-                  className={`${styles.card} ${styles.secondcard} ${
-                    styles.boxshadowcard
-                  } ${animation ? styles.animate : ""}`}
-                >
-                  <div className={styles.cardHeading}>{e.level}</div>
-                  <div className={styles.cardcollegeName}>{e.college}</div>
-                  <div className={styles.cardcollegeLocation}>{e.duration}</div>
-                  <div className={styles.cardcollegeLocation}>{e.location}</div>
+            <div className={`${styles.containercard} ${styles.rightcard}`}>
+              {educationList.map((e, index) => (
+                <div key={index}>
+                  {!(index % 2 == 0) ? (
+                    <div
+                      key={index}
+                      className={`${styles.card} ${styles.secondcard} ${
+                        styles.boxshadowcard
+                      } ${animation ? styles.animate : ""}`}
+                    >
+                      <div className={styles.cardHeading}>{e.level}</div>
+                      <div className={styles.cardcollegeName}>{e.college}</div>
+                      <div className={styles.cardcollegeLocation}>
+                        {e.duration}
+                      </div>
+                      <div className={styles.cardcollegeLocation}>
+                        {e.location}
+                      </div>
+                    </div>
+                  ) : (
+                    <div
+                      key={index}
+                      className={`${styles.card} ${styles.secondcard} ${styles.whitecard}`}
+                    ></div>
+                  )}
                 </div>
-              ) : (
-                <div
-                  key={index}
-                  className={`${styles.card} ${styles.secondcard} ${styles.whitecard}`}
-                ></div>
-              )}
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

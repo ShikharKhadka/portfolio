@@ -85,6 +85,7 @@ const CanvasExample = () => {
       if (!academicRef.current) return;
       const cardPosition =
         academicRef.current.getBoundingClientRect().top + window.scrollY;
+
       setposition((prev) => ({
         ...prev,
         type: { ...prev.type, academic: cardPosition },
@@ -103,6 +104,9 @@ const CanvasExample = () => {
       if (!masterRef.current) return;
       const cardPosition = masterRef.current.getBoundingClientRect();
       const masterposition = cardPosition.height - cardPosition.bottom;
+      console.log(masterposition, "masterPosition");
+      console.log(cardPosition, "cardPosition");
+
       if (masterposition < position.type.academic - 100) {
         if (position.showMenu) {
           setposition({ ...position, showMenu: false });
@@ -402,8 +406,15 @@ const CanvasExample = () => {
         <Academic innerref={academicRef} />
         <Experience innerref={bodyRef} animation={animation.experience} />
         <Tools innerRef={toolsRef} animation={animation.tools} />
-        <Projectshowcase innerRef={projectRef} animation={animation.project} />
-        <Others innerRef={othersRef} animation={animation.others} />
+        <Projectshowcase
+          innerRef={projectRef}
+          animation={animation.project}
+          bottomRef={othersRef}
+        />
+        <Others
+          // innerRef={othersRef}
+          animation={animation.others}
+        />
       </div>
     </div>
   );

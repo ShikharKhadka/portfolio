@@ -25,8 +25,8 @@ export const Academic = ({
       title: "Flutter Developer at Pioneer Associate(Mid level)",
       description:
         "Devloping cross platform app using flutter with dart sdk and Rest APi for fetching data i.e fintech, erp ",
-      startDate: "2025",
-      endDate: "2023",
+      startDate: "2023",
+      endDate: "",
     },
     {
       title: "Flutter Development at Prixa Technology (Junior)",
