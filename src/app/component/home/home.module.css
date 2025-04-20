@@ -1,0 +1,65 @@
+.first {
+  color: red;
+}
+
+.second {
+  color: green;
+}
+
+.third {
+  color: blue;
+}
+.fourth {
+  color: grey;
+}
+.fifth {
+  color: purple;
+}
+.sixth {
+  color: aqua;
+}
+.seventh {
+  color: black;
+}
+.eight {
+  color: red;
+}
+.ninth {
+  color: green;
+}
+.tenth {
+  color: blue;
+}
+.eleventh {
+  color: grey;
+}
+.twelvee {
+  color: purple;
+}
+.thirteen {
+  color: black;
+}
+.empty {
+  color: black;
+  font-size: 22px;
+}
+.first,
+.second,
+.third,
+.fourth,
+.fifth,
+.sixth,
+.seventh,
+.eight,
+.ninth,
+.tenth,
+.eleventh,
+.twelvee,
+.thirteen {
+  font-size: 22px;
+}
+
+.normal {
+  font-size: 22px;
+  color: #4b0010;
+}

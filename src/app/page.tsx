@@ -9,6 +9,7 @@ import { Tools } from "./component/tools/tools";
 import Image from "next/image";
 import { Projectshowcase } from "./component/project_showcase/project_showcase";
 import { Others } from "./component/others/others";
+import homestyles from "../app/component/home/home.module.css";
 
 const CanvasExample = () => {
   const menuList = [
@@ -54,6 +55,26 @@ const CanvasExample = () => {
     },
     showMenu: false,
   });
+  const styleList = [
+    ["first", homestyles.first],
+    ["second", homestyles.second],
+    ["third", homestyles.third],
+    ["fourth", homestyles.fourth],
+    ["fifth", homestyles.fifth],
+    ["sixth", homestyles.sixth],
+    ["seventh", homestyles.seventh],
+    ["eight", homestyles.eight],
+    ["ninth", homestyles.ninth],
+    ["tenth", homestyles.tenth],
+    ["eleventh", homestyles.eleventh],
+    ["twelvee", homestyles.twelvee],
+    ["thirteen", homestyles.thirteen],
+  ];
+
+  const [text, setText] = useState("");
+
+  const name = "ShikharKhadka";
+  const title = "(Frontend Developer)";
 
   const onClick = (index: number) => {
     seti(index);
@@ -281,6 +302,38 @@ const CanvasExample = () => {
     }
   }, []);
 
+  useEffect(() => {
+    styleList.forEach((e, index) => {
+      const classname = e[1];
+      const id = e[0];
+      const el = document.getElementById(id);
+      document.getElementById(id);
+
+      if (el) {
+        setTimeout(() => {
+          el.className = classname;
+        }, (index + 1) * 100);
+      }
+    });
+  }, []);
+  useEffect(() => {
+    const textList = title.split("");
+    const timeouts: NodeJS.Timeout[] = [];
+    setTimeout(() => {
+      textList.forEach((char, index) => {
+        const timeoutId = setTimeout(() => {
+          setText((prev) => prev + char);
+        }, 100 * index);
+        timeouts.push(timeoutId);
+      });
+    }, 1800);
+
+    // Cleanup on unmount
+    return () => {
+      timeouts.forEach(clearTimeout);
+    };
+  }, []);
+
   // const imageLoader = ({
   //   src,
   //   width,
@@ -354,7 +407,34 @@ const CanvasExample = () => {
                 ))}
               </div>
               <div>
-                <div className="h1">Shikhar Khadka (Frontend Developer)</div>
+                <div style={{ display: "flex" }}>
+                  {name.split("").map((e, index) => {
+                    if (index == 7) {
+                      return (
+                        <div
+                          className={homestyles.empty}
+                          key={index}
+                          id={styleList[index][0]}
+                          style={{ paddingLeft: "4px" }}
+                        >
+                          {e}
+                        </div>
+                      );
+                    }
+                    return (
+                      <div
+                        className={homestyles.empty}
+                        key={index}
+                        id={styleList[index][0]}
+                      >
+                        {e}
+                      </div>
+                    );
+                  })}
+                  <div className="h1">{text}</div>
+                </div>
+
+                {/* <div className="h1">Shikhar Khadka (Frontend Developer)</div> */}
                 <div className={`text ${styles.box}`}>
                   I started programming during the Covid Pandemic in 2020. I am
                   fluent in new like programming languages such as
