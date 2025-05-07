@@ -10,6 +10,23 @@ import Image from "next/image";
 import { Projectshowcase } from "./component/project_showcase/project_showcase";
 import { Others } from "./component/others/others";
 import homestyles from "../app/component/home/home.module.css";
+import { Loader } from "./component/loader/loader";
+
+const styleList = [
+  ["first", homestyles.first],
+  ["second", homestyles.second],
+  ["third", homestyles.third],
+  ["fourth", homestyles.fourth],
+  ["fifth", homestyles.fifth],
+  ["sixth", homestyles.sixth],
+  ["seventh", homestyles.seventh],
+  ["eight", homestyles.eight],
+  ["ninth", homestyles.ninth],
+  ["tenth", homestyles.tenth],
+  ["eleventh", homestyles.eleventh],
+  ["twelvee", homestyles.twelvee],
+  ["thirteen", homestyles.thirteen],
+];
 
 const CanvasExample = () => {
   const menuList = [
@@ -44,6 +61,7 @@ const CanvasExample = () => {
     project: false,
     others: false,
   });
+  const [shwowLoader, setLoader] = useState<boolean>(true);
   const [position, setposition] = useState({
     index: i,
     type: {
@@ -55,21 +73,6 @@ const CanvasExample = () => {
     },
     showMenu: false,
   });
-  const styleList = [
-    ["first", homestyles.first],
-    ["second", homestyles.second],
-    ["third", homestyles.third],
-    ["fourth", homestyles.fourth],
-    ["fifth", homestyles.fifth],
-    ["sixth", homestyles.sixth],
-    ["seventh", homestyles.seventh],
-    ["eight", homestyles.eight],
-    ["ninth", homestyles.ninth],
-    ["tenth", homestyles.tenth],
-    ["eleventh", homestyles.eleventh],
-    ["twelvee", homestyles.twelvee],
-    ["thirteen", homestyles.thirteen],
-  ];
 
   const [text, setText] = useState("");
 
@@ -266,73 +269,84 @@ const CanvasExample = () => {
   }, [i, animation.others]);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (canvas != null) {
-      const context = canvas.getContext("2d");
+    if (setLoader) {
+      setTimeout(() => {
+        setLoader(false);
+      }, 5000);
+    }
+    if (!shwowLoader) {
+      const canvas = canvasRef.current;
+      if (canvas != null) {
+        const context = canvas.getContext("2d");
 
-      // Set canvas size
-      canvas.width = 700;
-      canvas.height = 900;
+        // Set canvas size
+        canvas.width = 700;
+        canvas.height = 900;
 
-      if (context != null) {
-        context.beginPath();
-        context.moveTo(0, 0);
-        context.bezierCurveTo(0, 1200, 900, 800, 800, 700);
-        context.closePath(); // Close the shape
+        if (context != null) {
+          context.beginPath();
+          context.moveTo(0, 0);
+          context.bezierCurveTo(0, 1200, 900, 800, 800, 700);
+          context.closePath(); // Close the shape
 
-        // context.quadraticCurveTo(0, 700, 900, 800);
-        const gradient = context.createLinearGradient(900, 900, 0, 0);
+          // context.quadraticCurveTo(0, 700, 900, 800);
+          const gradient = context.createLinearGradient(900, 900, 0, 0);
 
-        gradient.addColorStop(0, "grey"); // Top color
-        gradient.addColorStop(1, "white");
-        context.fillStyle = gradient; // Change color as needed
-        context.fill();
+          gradient.addColorStop(0, "grey"); // Top color
+          gradient.addColorStop(1, "white");
+          context.fillStyle = gradient; // Change color as needed
+          context.fill();
 
-        context.beginPath();
-        context.moveTo(0, 0);
-        context.lineTo(900, 0);
-        context.lineTo(900, 900);
-        context.closePath(); // Close the shape
+          context.beginPath();
+          context.moveTo(0, 0);
+          context.lineTo(900, 0);
+          context.lineTo(900, 900);
+          context.closePath(); // Close the shape
 
-        gradient.addColorStop(0, "grey"); // Top color
-        gradient.addColorStop(1, "white");
-        context.fillStyle = gradient;
-        context.fill();
+          gradient.addColorStop(0, "grey"); // Top color
+          gradient.addColorStop(1, "white");
+          context.fillStyle = gradient;
+          context.fill();
+        }
       }
     }
-  }, []);
+  }, [shwowLoader]);
 
   useEffect(() => {
-    styleList.forEach((e, index) => {
-      const classname = e[1];
-      const id = e[0];
-      const el = document.getElementById(id);
-      document.getElementById(id);
+    if (!shwowLoader) {
+      styleList.forEach((e, index) => {
+        const classname = e[1];
+        const id = e[0];
+        const el = document.getElementById(id);
+        document.getElementById(id);
 
-      if (el) {
-        setTimeout(() => {
-          el.className = classname;
-        }, (index + 1) * 100);
-      }
-    });
-  }, []);
-  useEffect(() => {
-    const textList = title.split("");
-    const timeouts: NodeJS.Timeout[] = [];
-    setTimeout(() => {
-      textList.forEach((char, index) => {
-        const timeoutId = setTimeout(() => {
-          setText((prev) => prev + char);
-        }, 100 * index);
-        timeouts.push(timeoutId);
+        if (el) {
+          setTimeout(() => {
+            el.className = classname;
+          }, (index + 1) * 100);
+        }
       });
-    }, 1800);
+    }
+  }, [shwowLoader]);
+  useEffect(() => {
+    if (!shwowLoader) {
+      const textList = title.split("");
+      const timeouts: NodeJS.Timeout[] = [];
+      setTimeout(() => {
+        textList.forEach((char, index) => {
+          const timeoutId = setTimeout(() => {
+            setText((prev) => prev + char);
+          }, 100 * (index + 1));
+          timeouts.push(timeoutId);
+        });
+      }, 1800);
 
-    // Cleanup on unmount
-    return () => {
-      timeouts.forEach(clearTimeout);
-    };
-  }, []);
+      // Cleanup on unmount
+      return () => {
+        timeouts.forEach(clearTimeout);
+      };
+    }
+  }, [shwowLoader]);
 
   // const imageLoader = ({
   //   src,
@@ -346,7 +360,9 @@ const CanvasExample = () => {
   //   return `https://${src}?w=${width}&q=${quality || 75}`;
   // };
 
-  return (
+  return shwowLoader ? (
+    <Loader />
+  ) : (
     <div ref={masterRef} style={{ display: "flex" }}>
       <div
         style={{

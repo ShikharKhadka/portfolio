@@ -321,6 +321,7 @@ a.secondary {
 .box {
   margin: 14px 0 0 0;
   animation: mymove 2s;
+  line-height: 1.6;
 }
 
 @media (min-width: 481px) and (max-width: 560px) {

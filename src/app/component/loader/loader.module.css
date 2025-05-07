@@ -1,0 +1,19 @@
+@keyframes move {
+  0% {
+    left: -50px;
+    top: 0px;
+  }
+  50% {
+    left: 200px;
+    top: 0px;
+  }
+
+  100% {
+    left: -50px;
+    top: 0px;
+  }
+}
+.loader {
+  position: relative;
+  animation: move 3s infinite;
+}
